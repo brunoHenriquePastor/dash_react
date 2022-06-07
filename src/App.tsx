@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useEffect} from 'react';
+import mqtt from 'mqtt';
+import HookMqtt from './components/Hook/';
+//import '~antd/dist/antd.css';
+
+
+
 
 function App() {
+  // const client = mqtt.connect(SOME_URL);
+  // const [connectionStatus, setConnectionStatus] = React.useState(false);
+  // const [messages, setMessages] = React.useState<string[]>([]);
+
+  useEffect(() => {
+
+    // if (client) {
+    //   console.log(client)
+    //   client.on('connect', () => {
+    //     setConnectStatus('Connected');
+    //   });
+    // }
+    
+    // client.on('connect', () => setConnectionStatus(true));
+    // client.on('message', (topic, payload, packet) => {
+    //   setMessages(messages.concat(payload.toString()));
+    // });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <div><HookMqtt /></div>
+     {/* {messages.map((message) => (
+        <h2>{message}</h2>
+     )
+     )} */}
+    </>
   );
+
 }
 
 export default App;
